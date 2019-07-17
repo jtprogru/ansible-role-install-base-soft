@@ -1,0 +1,35 @@
+---
+- name: Upgrade repos
+  yum:
+    name: '*'
+    state: latest
+    skip_broken: yes
+
+- name: Install the required rpms
+  yum:
+    name: "{{ item.name }}"
+    state: latest
+  with_items:
+    - { name: wget }
+    - { name: git }
+    - { name: net-tools }
+    - { name: bind-utils }
+    - { name: vim }
+    - { name: tcpdump }
+    - { name: telnet }
+    - { name: unzip }
+    - { name: zlib }
+    - { name: iperf3 }
+    - { name: mailx }
+    - { name: curl }
+    - { name: dstat }
+    - { name: sysstat }
+    - { name: deltarpm }
+    - { name: screen }
+    - { name: rsync }
+    - { name: tmux }
+    - { name: mc }
+    - { name: htop }
+    - { name: bash-completion-extras }
+    - { name: ntp }
+    - { name: iotop }
