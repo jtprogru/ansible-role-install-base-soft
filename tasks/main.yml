@@ -1,4 +1,29 @@
 ---
+- name: Make absent /etc/yum.repos.d
+  file: path=/etc/yum.repos.d state=absent
+
+- name: Set local repos 
+  file: path=/etc/yum.repos.d state=directory mode=0755 owner=root group=root
+
+- name: provide files to yum 
+  copy:
+    src: yum-repos-local.repo
+    dest: /etc/yum.repos.d/yum-repos-local.repo
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Clear YUM cache
+  shell: bash -c 'yum clean all'
+
+- name: rm -rf cache yum directory
+  shell: bash -c 'rm -rf /var/cache/yum'
+
+
+- name:  Make yum cache
+  yum:
+    update_cache: yes
+
 - name: Upgrade repos
   yum:
     name: '*'
@@ -33,3 +58,4 @@
     - { name: bash-completion-extras }
     - { name: ntp }
     - { name: iotop }
+    - { name: lsof }
