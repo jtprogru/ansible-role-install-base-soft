@@ -59,3 +59,4 @@
     - { name: ntp }
     - { name: iotop }
     - { name: lsof }
+    - { name: mlocate }
