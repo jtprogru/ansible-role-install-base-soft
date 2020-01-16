@@ -3,12 +3,6 @@
   yum:
     update_cache: yes
 
-- name: Upgrade repos
-  yum:
-    name: '*'
-    state: latest
-    skip_broken: yes
-
 - name: Install the required rpms
   yum:
     name: "{{ base_soft_list.name }}"
