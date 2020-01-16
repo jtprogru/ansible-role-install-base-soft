@@ -1,0 +1,17 @@
+---
+- name: use debian mirror
+  template: src={{ debian.sources_list }} dest=/etc/apt/sources.list
+
+- name: upgrade the distro
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: install common packages
+  apt:
+    name: "{{ base_soft_list.name }}"
+    state: "{{ base_soft_list.state }}"
+    with_items: base_soft_list
+
+- name: use locales
+  locale_gen: name={{ debian.locale }} state=present

@@ -1,62 +1,8 @@
 ---
-- name: Make absent /etc/yum.repos.d
-  file: path=/etc/yum.repos.d state=absent
+# tasks file for .
+- name: Run master task
+  import_tasks: Centos.yml
+  when: ansible_facts['os_family']|lower == 'redhat'
 
-- name: Set local repos 
-  file: path=/etc/yum.repos.d state=directory mode=0755 owner=root group=root
-
-- name: provide files to yum 
-  copy:
-    src: yum-repos-local.repo
-    dest: /etc/yum.repos.d/yum-repos-local.repo
-    owner: root
-    group: root
-    mode: '0644'
-
-- name: Clear YUM cache
-  shell: bash -c 'yum clean all'
-
-- name: rm -rf cache yum directory
-  shell: bash -c 'rm -rf /var/cache/yum'
-
-
-- name:  Make yum cache
-  yum:
-    update_cache: yes
-
-- name: Upgrade repos
-  yum:
-    name: '*'
-    state: latest
-    skip_broken: yes
-
-- name: Install the required rpms
-  yum:
-    name: "{{ item.name }}"
-    state: latest
-  with_items:
-    - { name: wget }
-    - { name: git }
-    - { name: net-tools }
-    - { name: bind-utils }
-    - { name: vim }
-    - { name: tcpdump }
-    - { name: telnet }
-    - { name: unzip }
-    - { name: zlib }
-    - { name: iperf3 }
-    - { name: mailx }
-    - { name: curl }
-    - { name: dstat }
-    - { name: sysstat }
-    - { name: deltarpm }
-    - { name: screen }
-    - { name: rsync }
-    - { name: tmux }
-    - { name: mc }
-    - { name: htop }
-    - { name: bash-completion-extras }
-    - { name: ntp }
-    - { name: iotop }
-    - { name: lsof }
-    - { name: mlocate }
+- import_tasks: Debian.yml
+  when: ansible_facts['os_family']|lower == 'debian'
