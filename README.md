@@ -1,6 +1,8 @@
 base-soft
 =========
 
+[![Build Status](https://travis-ci.com/jtprog/base-soft.svg?branch=master)](https://travis-ci.com/jtprog/base-soft)
+
 My base soft for linux server
 
 Requirements
