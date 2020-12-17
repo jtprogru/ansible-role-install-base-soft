@@ -1,7 +1,7 @@
 ---
 - name:  Make yum cache
   yum:
-    update_cache: yes
+    update_cache: true
 
 - name: Install the required rpms
   yum:
