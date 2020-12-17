@@ -34,6 +34,10 @@ galaxy_info:
     - name: Debian
       versions:
         - "stretch"
+    - name: Ubuntu
+      versions:
+        - 20.04
+        - 18.04
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
