@@ -16,4 +16,3 @@
    state: "{{ item.state }}"
    update_cache: true
   with_items: "{{ base_soft_list_extra }}"
-

@@ -41,4 +41,3 @@ base_soft_list:
   - { name: python3-venv, state: present }
   - { name: bc, state: present }
   - { name: atop, state: present }
-

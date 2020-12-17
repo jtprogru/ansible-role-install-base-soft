@@ -29,4 +29,3 @@
   locale_gen:
     name: "{{ debian.locale }}"
     state: present
-
