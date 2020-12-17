@@ -5,5 +5,15 @@
 
 - name: Install the required rpms
   yum:
-    name: "{{ base_soft_list.name }}"
-    state: "{{ base_soft_list.latest }}"
+    name: "{{ item.name }}"
+    state: "{{ item.latest }}"
+  with_items: "{{ base_soft_list }}"
+
+
+- name: "install extra packages"
+  package:
+   name: "{{ item.name }}"
+   state: "{{ item.state }}"
+   update_cache: true
+  with_items: "{{ base_soft_list_extra }}"
+
