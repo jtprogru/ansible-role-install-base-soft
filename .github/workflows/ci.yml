@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Upgrade pip3.
+        run: pip3 install --upgrade pip
+
       - name: Install test dependencies.
         run: pip3 install yamllint ansible-lint
 
@@ -55,6 +58,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+
+      - name: Upgrade pip3.
+        run: pip3 install --upgrade pip
 
       - name: Install test dependencies.
         run: pip3 install ansible molecule[docker] docker
