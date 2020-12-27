@@ -1,40 +1,25 @@
-base-soft
-=========
+# jtprog.install_base_soft
 
-[![Build Status](https://travis-ci.com/jtprog/base-soft.svg?branch=master)](https://travis-ci.com/jtprog/base-soft)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprog/ansible-role-install-base-soft/CI?label=CI) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprog/ansible-role-install-base-soft/Release?label=Release) ![GitHub](https://img.shields.io/github/license/jtprog/ansible-role-install-base-soft)
 
-My base soft for linux server
+Simple role for install base soft for comfort using remote server.
 
-Requirements
-------------
 
-None
+## Role Variables
 
-Role Variables
---------------
 
-See `defaults`
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-Dependencies
-------------
 
-None
-
-Example Playbook
-----------------
+## Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+- hosts: all
+  roles:
+     - jtprog.install_base_soft
+```
 
-    - hosts: servers
-      roles:
-         - { role: jtprog.base_soft }
+## License
 
-License
--------
-
-WTFPL
-
-Author Information
-------------------
-
-WWW: https://jtprog.ru
+[WTFPL](LICENSE.md)
