@@ -2,6 +2,7 @@
 - name: "update apt cache"
   apt:
     update_cache: true
+    upgrade: full
 
 - name: "install required packages"
   apt:

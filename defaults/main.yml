@@ -9,9 +9,9 @@ base_soft_list:
   - { name: tcpdump, state: present }
   - { name: telnet, state: present }
   - { name: unzip, state: present }
-  - { name: zlib, state: present }
+  - { name: zlib1g, state: present }
   - { name: iperf3, state: present }
-  - { name: mailx, state: present }
+  - { name: bsd-mailx, state: present }
   - { name: curl, state: present }
   - { name: dstat, state: present }
   - { name: sysstat, state: present }
