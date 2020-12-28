@@ -15,9 +15,23 @@ A description of the settable variables for this role should go here, including 
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 ```yaml
-- hosts: all
+---
+- name: Installing basic software
+  hosts: all
+  become: true
+
+  vars:
+    base_soft_list_extra:
+      - { name: ansible, state: latest }
+      - { name: net-tools, state: latest }
+      - { name: python3-pip, state: latest }
+      - { name: python3-setuptools, state: latest }
+      - { name: python3-wheel, state: latest }
+      - { name: ansible-lint, state: latest }
+      - { name: yamllint, state: latest }
+
   roles:
-     - jtprog.install_base_soft
+    - jtprog.install_base_soft
 ```
 
 ## License
