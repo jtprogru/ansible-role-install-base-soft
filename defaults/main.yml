@@ -24,6 +24,7 @@ base_soft_list:
   - { name: htop, state: present }
   - { name: bash-completion, state: present }
   - { name: ntp, state: absent }  # Remove because default using systemd-timesyncd
+  - { name: ntpstate, state: absent }  # Remove because default using systemd-timesyncd
   - { name: iotop, state: present }
   - { name: lsof, state: present }
   - { name: mlocate, state: present } # Please disable this package if you run this playbook on NFS-server
