@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: install_base_soft
   author: Mihael Savin
-  description: Ansible role for install Docker
+  description: Ansible role for install basic software
   company: SysOps
 
   license: WTFPL
