@@ -3,6 +3,10 @@
 - name: "install_base_soft | include OS-specific variables."
   include_vars: "{{ ansible_os_family }}.yml"
 
+- name: "install_base_soft | update facts."
+  set_fact:
+    base_soft_list: "{{ __base_soft_list }}"
+
 - name: "install_base_soft | update apt cache."
   yum:
     update_cache: true
