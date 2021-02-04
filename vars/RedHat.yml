@@ -2,7 +2,7 @@
 __base_soft_list:
   - bash-completion
   - bc
-  - bsd-mailx
+  - mailx
   - curl
   - dstat
   - fping
