@@ -1,7 +1,5 @@
 ---
 __base_soft_list:
-  - apt-transport-https
-  - aptitude
   - bash-completion
   - bc
   - bsd-mailx
