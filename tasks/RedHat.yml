@@ -10,7 +10,6 @@
 - name: "install_base_soft | update yum cache."
   yum:
     update_cache: true
-    cache_valid_time: 86400
   when: ansible_os_family == 'RedHat'
 
 - name: "install_base_soft | install required packages."
