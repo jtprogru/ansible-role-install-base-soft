@@ -25,6 +25,8 @@ __base_soft_list:
   - ncdu
   - python-pycurl
   - python3-pip
+  - python3-wheel
+  - python3-setuptools
   - python3-pycurl
   - python3-venv
   - rsync

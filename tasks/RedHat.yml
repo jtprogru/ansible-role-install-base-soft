@@ -1,11 +1,17 @@
 ---
 
 - name: "install_base_soft | include OS-specific variables."
-  include_vars: "{{ ansible_os_family }}.yml"
+  include_vars: "RedHat.yml"
+  when: ansible_os_family == 'RedHat'
+
+- name: "install_base_soft | include task for EPEL."
+  include_tasks: epel.yml
+  when: ansible_os_family == 'RedHat'
 
 - name: "install_base_soft | update facts."
   set_fact:
     base_soft_list: "{{ __base_soft_list }}"
+  when: ansible_os_family == 'RedHat'
 
 - name: "install_base_soft | update yum cache."
   yum:
