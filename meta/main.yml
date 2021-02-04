@@ -12,10 +12,16 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
+        - bionic
         - focal
     - name: Debian
       versions:
+        - stretch
         - buster
+    - name: EL
+      version:
+        - 7
+        - 8
 
   galaxy_tags:
     - configuration

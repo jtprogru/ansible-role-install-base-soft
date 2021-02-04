@@ -22,3 +22,6 @@
 
   roles:
     - role: jtprog.install_base_soft
+      vars:
+        base_soft_list_extra:
+          - ansible

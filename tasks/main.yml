@@ -1,19 +1,9 @@
 ---
-- name: "update apt cache"
-  apt:
-    update_cache: true
-    cache_valid_time: 86400
 
-- name: "install required packages"
-  apt:
-   name: "{{ item.name }}"
-   state: "{{ item.state }}"
-   update_cache: false
-  with_items: "{{ base_soft_list }}"
+- name: "install_base_soft | include tasks for Debian/Ubuntu."
+  include_tasks: Debian.yml
+  when: when: ansible_os_family == 'Debian'
 
-- name: "install extra packages"
-  apt:
-   name: "{{ item.name }}"
-   state: "{{ item.state }}"
-   update_cache: false
-  with_items: "{{ base_soft_list_extra }}"
+- name: "install_base_soft | include tasks for RedHat/CenOS."
+  include_tasks: RedHat.yml
+  when: when: ansible_os_family == 'RedHat'

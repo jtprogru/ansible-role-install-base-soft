@@ -1,0 +1,30 @@
+---
+
+- name: "install_base_soft | include OS-specific variables."
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: "install_base_soft | update facts."
+  set_fact:
+    base_soft_list: "{{ __base_soft_list }}"
+
+- name: "install_base_soft | update apt cache."
+  apt:
+    update_cache: true
+    cache_valid_time: 86400
+  when: ansible_os_family == 'Debian'
+
+- name: "install_base_soft | install required packages."
+  apt:
+   name: "{{ item.name }}"
+   state: "{{ item.state }}"
+   update_cache: false
+  with_items: "{{ base_soft_list }}"
+  when: ansible_os_family == 'Debian'
+
+- name: "install_base_soft | install extra packages."
+  apt:
+   name: "{{ item.name }}"
+   state: "{{ item.state }}"
+   update_cache: false
+  with_items: "{{ base_soft_list_extra }}"
+  when: ansible_os_family == 'Debian'
