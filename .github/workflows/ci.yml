@@ -47,7 +47,6 @@ jobs:
           - ubuntu1804
           - debian10
           - debian9
-          - centos8
           - centos7
 
     steps:

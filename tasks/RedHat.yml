@@ -7,7 +7,7 @@
   set_fact:
     base_soft_list: "{{ __base_soft_list }}"
 
-- name: "install_base_soft | update apt cache."
+- name: "install_base_soft | update yum cache."
   yum:
     update_cache: true
     cache_valid_time: 86400
@@ -15,16 +15,12 @@
 
 - name: "install_base_soft | install required packages."
   yum:
-   name: "{{ item.name }}"
-   state: "{{ item.state }}"
+   name: "{{ base_soft_list }}"
    update_cache: false
-  with_items: "{{ base_soft_list }}"
   when: ansible_os_family == 'RedHat'
 
 - name: "install_base_soft | install extra packages."
   yum:
-   name: "{{ item.name }}"
-   state: "{{ item.state }}"
+   name: "{{ base_soft_list_extra }}"
    update_cache: false
-  with_items: "{{ base_soft_list_extra }}"
   when: ansible_os_family == 'RedHat'
