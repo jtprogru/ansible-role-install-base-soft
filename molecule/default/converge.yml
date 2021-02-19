@@ -21,7 +21,7 @@
       failed_when: systemctl_status.rc > 1
 
   roles:
-    - role: jtprog.install_base_soft
+    - role: jtprogru.install_base_soft
       vars:
         base_soft_list_extra:
           - ansible
