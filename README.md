@@ -3,7 +3,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprogru/ansible-role-install-base-soft/CI?label=CI)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jtprogru/ansible-role-install-base-soft/Release?label=Release)
 ![GitHub](https://img.shields.io/github/license/jtprogru/ansible-role-install-base-soft)
-[![Ansible Role](https://img.shields.io/ansible/role/53229)](https://galaxy.ansible.com/jtprogru/ansible-role-install-base-soft/)
+[![Ansible Role](https://img.shields.io/ansible/role/53229)](https://galaxy.ansible.com/jtprogru/install_base_soft/)
 [![GitHub tag](https://img.shields.io/github/tag/jtprogru/ansible-role-install-base-soft.svg)](https://github.com/jtprogru/ansible-role-install-base-soft/tags)
 
 Simple role for install base soft for comfort using remote server.
