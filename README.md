@@ -8,16 +8,14 @@
 
 Simple role for install base soft for comfort using remote server.
 
-
 ## Role Variables
 
-
 See [`defaults/main.yml`](defaults/main.yml).
-
 
 ## Example Playbook
 
 Example playbook:
+
 ```yaml
 ---
 - name: Installing basic software

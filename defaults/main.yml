@@ -1,7 +1,4 @@
 ---
-# Enable EPEL repos for CentOS/RedHat
-epel_repo_disable: true
-
 base_soft_list: []
 #  - wget
 #  - git

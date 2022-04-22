@@ -1,16 +1,15 @@
 ---
 name: Release
-'on':
+"on":
   push:
     tags:
-      - '*'
+      - "*"
 
 defaults:
   run:
-    working-directory: 'jtprogru.install_base_soft'
+    working-directory: jtprogru.install_base_soft
 
 jobs:
-
   release:
     name: Release
     runs-on: ubuntu-20.04
@@ -18,12 +17,12 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'jtprogru.install_base_soft'
+          path: jtprogru.install_base_soft
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: 3.x
 
       - name: Install Ansible.
         run: pip3 install ansible

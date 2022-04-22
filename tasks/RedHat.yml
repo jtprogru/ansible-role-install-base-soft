@@ -1,31 +1,30 @@
 ---
-
-- name: "install_base_soft | include OS-specific variables."
-  include_vars: "RedHat.yml"
+- name: install_base_soft | include OS-specific variables.
+  ansible.builtin.include_vars: RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-- name: "install_base_soft | include task for EPEL."
+- name: install_base_soft | include task for EPEL.
   include_tasks: epel.yml
   when: ansible_os_family == 'RedHat'
 
-- name: "install_base_soft | update facts."
-  set_fact:
+- name: install_base_soft | update facts.
+  ansible.builtin.set_fact:
     base_soft_list: "{{ __base_soft_list }}"
   when: ansible_os_family == 'RedHat'
 
-- name: "install_base_soft | update yum cache."
-  yum:
+- name: install_base_soft | update yum cache.
+  ansible.builtin.yum:
     update_cache: true
   when: ansible_os_family == 'RedHat'
 
-- name: "install_base_soft | install required packages."
-  yum:
-   name: "{{ base_soft_list }}"
-   update_cache: false
+- name: install_base_soft | install required packages.
+  ansible.builtin.yum:
+    name: "{{ base_soft_list }}"
+    update_cache: false
   when: ansible_os_family == 'RedHat'
 
-- name: "install_base_soft | install extra packages."
-  yum:
-   name: "{{ base_soft_list_extra }}"
-   update_cache: false
+- name: install_base_soft | install extra packages.
+  ansible.builtin.yum:
+    name: "{{ base_soft_list_extra }}"
+    update_cache: false
   when: ansible_os_family == 'RedHat'

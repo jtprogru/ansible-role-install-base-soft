@@ -1,9 +1,8 @@
 ---
-
-- name: "install_base_soft | include tasks for Debian/Ubuntu."
+- name: install_base_soft | include tasks for Debian/Ubuntu.
   include_tasks: Debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: "install_base_soft | include tasks for RedHat/CenOS."
+- name: install_base_soft | include tasks for RedHat/CenOS.
   include_tasks: RedHat.yml
   when: ansible_os_family == 'RedHat'
