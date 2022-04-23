@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: install_base_soft
+  namespace: jtprogru
   author: Mihael Savin
   description: Ansible role for install basic software
   company: SysOps
