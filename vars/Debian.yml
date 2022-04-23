@@ -23,7 +23,6 @@ __base_soft_list:
   - mtr
   - multitail
   - ncdu
-  - python-pycurl
   - python3-pip
   - python3-wheel
   - python3-setuptools
